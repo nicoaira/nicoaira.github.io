@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nicolás Aira · Computational RNA Biology</title>
+  <meta name="description" content="Nicolás Aira — PhD student in Computational RNA Biology at UIC Barcelona. Graph neural networks for RNA secondary structure, GINflow, and the GINfinity venture.">
+  <meta name="author" content="Nicolás Aira">
+  <meta property="og:title" content="Nicolás Aira · Computational RNA Biology">
+  <meta property="og:description" content="PhD student building graph neural networks to compare RNA secondary structures — and turning that research into a venture.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nicoaira.github.io/">
+  <meta property="og:image" content="https://nicoaira.github.io/assets/img/portrait.jpg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230d6e5f'/><path d='M7 22 A9 9 0 0 1 25 22 M11 22 A5 5 0 0 1 21 22' fill='none' stroke='%23f6f3ec' stroke-width='2.4' stroke-linecap='round'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" id="top">
+    <div class="wrap nav__inner">
+      <a class="nav__brand" href="#top">Nicolás Aira</a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+      <nav id="nav-links" class="nav__links" aria-label="Sections">
+        <a href="#research">Research</a>
+        <a href="#ventures">Ventures</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#certificates">Certificates</a>
+        <a href="assets/Nicolas_Aira_CV.pdf" download>CV ↓</a>
+        <a href="#contact" class="nav__cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow">PhD Student · Computational RNA Biology · Barcelona</p>
+          <h1>Teaching machines to read the <em>shape</em> of RNA.</h1>
+          <p class="lede">
+            I'm a biotechnologist turned computational biologist at
+            <strong>Universitat Internacional de Catalunya</strong>. I build graph neural networks
+            that compare RNA secondary structures, so we can find RNAs that share a
+            shape — and maybe a function — even when their sequences look nothing alike.
+            Lately I'm also learning how to take that research out of the lab and into a venture.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#ventures">See what I'm building</a>
+            <a class="btn" href="assets/Nicolas_Aira_CV.pdf" download>Download CV ↓</a>
+            <a class="btn" href="mailto:aira.nicolas94@gmail.com">Get in touch</a>
+          </div>
+          <ul class="hero__links">
+            <li><a href="https://github.com/nicoaira/ginflow" rel="noopener">ginflow repo</a></li>
+            <li><a href="https://github.com/nicoaira/GINFINITY" rel="noopener">GINFINITY repo</a></li>
+            <li><a href="https://ginflow.io/" rel="noopener">ginflow.io</a></li>
+            <li><a href="https://github.com/nicoaira" rel="noopener">GitHub</a></li>
+            <li><a href="https://doi.org/10.1126/sciadv.aea1431" rel="noopener">Latest paper</a></li>
+          </ul>
+        </div>
+        <figure class="hero__portrait">
+          <img src="assets/img/portrait.jpg" width="720" height="900" alt="Portrait of Nicolás Aira">
+        </figure>
+      </div>
+      <div class="wrap">
+        <figure class="arc" aria-labelledby="arc-cap">
+          <svg id="arc-svg" role="img" aria-label="Arc diagram of a transfer RNA secondary structure"></svg>
+          <figcaption id="arc-cap"><span class="mono">tRNA<sup>Phe</sup></span> drawn as an arc diagram: every arc is a base pair. Structures like this are what my models turn into graph embeddings.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- AT A GLANCE -->
+    <section class="glance" aria-label="At a glance">
+      <div class="wrap glance__grid">
+        <div><span class="glance__num">2023–</span><span class="glance__lbl">PhD at UIC Barcelona</span></div>
+        <div><span class="glance__num">GINflow</span><span class="glance__lbl">Nextflow pipeline for RNA structure search</span></div>
+        <div><span class="glance__num">2</span><span class="glance__lbl">Venture programs in 2026</span></div>
+        <div><span class="glance__num">4</span><span class="glance__lbl">Courses taught at UIC</span></div>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section class="section" id="research">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="eyebrow">01 · Research</p>
+          <h2>Structure-aware similarity search for RNA</h2>
+          <p class="section__intro">
+            Many non-coding RNAs keep their function through their fold, not their sequence.
+            My thesis asks how we can measure that structural similarity at scale.
+          </p>
+        </header>
+
+        <div class="cards cards--3">
+          <article class="card">
+            <p class="card__tag">PhD thesis</p>
+            <h3>Graph neural networks for RNA structure</h3>
+            <p>I'm building a Graph Neural Network that learns to assess similarity between RNA secondary structures, with the goal of understanding how the structure of ncRNAs shapes their function.</p>
+            <p class="card__meta">Computational RNA Biology Lab · UIC</p>
+          </article>
+          <article class="card">
+            <p class="card__tag">Pipeline</p>
+            <h3>GINflow</h3>
+            <p>A Nextflow pipeline that finds similar RNAs using their secondary-structure information. It turns structures into graph embeddings and runs BLAST-style similarity search over them.</p>
+            <p class="card__links">
+              <a href="https://ginflow.io/" rel="noopener">ginflow.io ↗</a>
+              <a href="https://github.com/nicoaira/ginflow" rel="noopener">Source ↗</a>
+            </p>
+          </article>
+          <article class="card">
+            <p class="card__tag">Model</p>
+            <h3>GINFINITY</h3>
+            <p>The Graph Isomorphism Network at the core of the pipeline: it generates embeddings of RNA secondary structures and enables efficient similarity search, with an exact local Smith–Waterman aligner for embedding sequences.</p>
+            <p class="card__links">
+              <a href="https://github.com/nicoaira/GINFINITY" rel="noopener">GINFINITY ↗</a>
+              <a href="https://github.com/nicoaira/GINFINITY-SW" rel="noopener">GINFINITY-SW ↗</a>
+            </p>
+          </article>
+        </div>
+
+        <div class="repos">
+          <h3 class="stack__title">Featured repositories</h3>
+          <div class="repos__grid">
+            <a class="repo" href="https://github.com/nicoaira/ginflow" rel="noopener">
+              <span class="repo__name"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.71 1.71.75.75 0 0 1-1.06 1.06A2.49 2.49 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.71A2.49 2.49 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.09a.25.25 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"/></svg>nicoaira/<strong>ginflow</strong></span>
+              <span class="repo__desc">Nextflow pipeline for large-scale RNA secondary-structure similarity analysis using Graph Isomorphism Networks and FAISS-based similarity search.</span>
+              <span class="repo__meta"><span class="dot dot--py"></span>Python · <span class="dot dot--nf"></span>Nextflow</span>
+            </a>
+            <a class="repo" href="https://github.com/nicoaira/GINFINITY" rel="noopener">
+              <span class="repo__name"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.71 1.71.75.75 0 0 1-1.06 1.06A2.49 2.49 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.71A2.49 2.49 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.09a.25.25 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"/></svg>nicoaira/<strong>GINFINITY</strong></span>
+              <span class="repo__desc">Graph Isomorphism Network (GIN) that generates embeddings of RNA secondary structures and enables efficient similarity searches.</span>
+              <span class="repo__meta"><span class="dot dot--py"></span>Python</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="stack">
+          <h3 class="stack__title">Toolbox</h3>
+          <ul class="chips">
+            <li>Python</li><li>R</li><li>Shell</li><li>Nextflow</li><li>PyTorch · GNNs</li>
+            <li>Machine learning</li><li>FAISS</li><li>Conda / containers</li><li>Linux</li>
+          </ul>
+          <h3 class="stack__title">Wet lab background</h3>
+          <ul class="chips chips--quiet">
+            <li>PCR · qPCR · RT-PCR</li><li>Isothermal amplification</li><li>Molecular cloning</li>
+            <li>CRISPRi (dCas9)</li><li>Protein purification</li><li>Western blot</li>
+            <li>BSL-2 microorganisms</li><li>IR · UV-Vis · fluorescence spectroscopy</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- VENTURES -->
+    <section class="section section--ink" id="ventures">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="eyebrow">02 · From research to venture</p>
+          <h2>Building <span class="hl">GINfinity</span></h2>
+          <p class="section__intro">
+            Searching huge RNA collections by structure is a needle-in-a-haystack problem.
+            We're on the way to building a spin-off that uses GINflow for RNA drug discovery — and in 2026
+            I took the project through two venture programs, pitching it to investors, mentors and industry partners.
+          </p>
+        </header>
+
+        <ol class="timeline timeline--venture">
+          <li class="tl">
+            <div class="tl__when">Oct 2026 · Rome</div>
+            <div class="tl__body">
+              <h3>Genesis4LifeSciences — BRIDGE Track</h3>
+              <p class="tl__org">Innovation Program · Meet in Italy for Life Sciences 2026 · ALISEI · EU-funded</p>
+              <p>GINfinity was selected for the BRIDGE Track of the Genesis4LifeSciences innovation program. I pitched the project, <em>“Finding the Needle in the Haystack”</em>, on stage at Meet in Italy for Life Sciences (Auditorium della Tecnica, 13–14 October 2026).</p>
+              <p class="tl__links"><a href="assets/certificates/Genesis4LifeSciences_BRIDGE_Track_GINfinity.pdf">Certificate of participation (PDF)</a></p>
+            </div>
+            <figure class="tl__media">
+              <img src="assets/img/pitch-rome-bridge.jpg" width="1600" height="900" loading="lazy" alt="Nicolás pitching GINfinity on stage at Meet in Italy for Life Sciences in Rome, with the BRIDGE banner behind him">
+              <figcaption>Pitching GINfinity at Meet in Italy for Life Sciences, Rome.</figcaption>
+            </figure>
+          </li>
+          <li class="tl">
+            <div class="tl__when">2026 · Barcelona</div>
+            <div class="tl__body">
+              <h3>Venture Builder — Xartec Salut</h3>
+              <p class="tl__org">Venture Builder program · XarTEC Salut, Catalonia</p>
+              <p>Took part in the Xartec Salut Venture Builder program with the project and pitched it at the program's pitch day.</p>
+            </div>
+            <figure class="tl__media tl__media--tall">
+              <img src="assets/img/pitch-xartec-salut.jpg" width="800" height="1422" loading="lazy" alt="Nicolás presenting the project to the audience at the Xartec Salut Venture Builder pitch">
+              <figcaption>Pitch at the Xartec Salut Venture Builder.</figcaption>
+            </figure>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="eyebrow">03 · Experience &amp; education</p>
+          <h2>From the bench to the GPU</h2>
+        </header>
+
+        <div class="two-col">
+          <div>
+            <h3 class="col__title">Experience</h3>
+            <ol class="timeline">
+              <li class="tl">
+                <div class="tl__when">2023 – present</div>
+                <div class="tl__body">
+                  <h4>PhD Researcher &amp; Lecturer</h4>
+                  <p class="tl__org">Universitat Internacional de Catalunya · Computational RNA Biology Lab</p>
+                  <p>Graph neural networks for RNA structure similarity; developer of GINflow. Teaching in three undergraduate courses and a master's program.</p>
+                </div>
+              </li>
+              <li class="tl">
+                <div class="tl__when">Feb 2021 – Apr 2023</div>
+                <div class="tl__body">
+                  <h4>Junior Researcher, R&amp;D</h4>
+                  <p class="tl__org">Wiener lab</p>
+                  <p>Development of molecular diagnostic kits in the company's R&amp;D department.</p>
+                </div>
+              </li>
+              <li class="tl">
+                <div class="tl__when">Apr 2022 – May 2023</div>
+                <div class="tl__body">
+                  <h4>Practice Teacher</h4>
+                  <p class="tl__org">National University of Rosario (UNR)</p>
+                  <p>Practical laboratory and problem-solving classes in General Biology and Animal &amp; Plant Biology.</p>
+                </div>
+              </li>
+              <li class="tl">
+                <div class="tl__when">Mar 2020 – Dec 2022</div>
+                <div class="tl__body">
+                  <h4>Undergraduate Thesis</h4>
+                  <p class="tl__org">IBR-CONICET · Actinomycetes Physiology and Genetics Lab</p>
+                  <p>Built a CRISPRi transcriptional-interference system to study a transcriptional regulator of <em>Mycobacterium tuberculosis</em>, combining molecular biology and proteomics.</p>
+                </div>
+              </li>
+              <li class="tl">
+                <div class="tl__when">Mar 2018 – Apr 2022</div>
+                <div class="tl__body">
+                  <h4>Teaching Assistant</h4>
+                  <p class="tl__org">National University of Rosario (UNR)</p>
+                  <p>Laboratory practicals for the Biology Area courses.</p>
+                </div>
+              </li>
+              <li class="tl">
+                <div class="tl__when">Feb – Jul 2019</div>
+                <div class="tl__body">
+                  <h4>Research Intern</h4>
+                  <p class="tl__org">IBR-CONICET</p>
+                  <p>Screened a chemical compound library against <em>M. tuberculosis</em>; molecular cloning.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <div>
+            <h3 class="col__title">Education</h3>
+            <ol class="timeline">
+              <li class="tl">
+                <div class="tl__when">2023 – present</div>
+                <div class="tl__body">
+                  <h4>PhD, Computational RNA Biology</h4>
+                  <p class="tl__org">Universitat Internacional de Catalunya (UIC), Barcelona</p>
+                </div>
+              </li>
+              <li class="tl">
+                <div class="tl__when">2014 – 2022</div>
+                <div class="tl__body">
+                  <h4>Licenciado en Biotecnología</h4>
+                  <p class="tl__org">National University of Rosario (UNR), Argentina</p>
+                  <p class="gpa">GPA <strong>9.03</strong> / 10</p>
+                </div>
+              </li>
+              <li class="tl">
+                <div class="tl__when">2007 – 2012</div>
+                <div class="tl__body">
+                  <h4>Argentine-Spanish Bilingual Bachelor</h4>
+                  <p class="tl__org">Parque de España School, Rosario · Scientific-Technical track</p>
+                </div>
+              </li>
+            </ol>
+
+            <h3 class="col__title">Languages</h3>
+            <ul class="langs">
+              <li><span>Spanish</span><span>Native</span></li>
+              <li><span>English</span><span>Advanced · TOEFL 106/120 · <a href="assets/certificates/TOEFL_iBT_Score_Report_Aira_Nicolas.pdf">score report</a></span></li>
+              <li><span>Catalan</span><span>Intermediate</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS & TALKS -->
+    <section class="section section--tint" id="publications">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="eyebrow">04 · Publications &amp; talks</p>
+          <h2>Papers, talks and meetings</h2>
+        </header>
+
+        <ol class="pubs">
+          <li class="pub">
+            <span class="pub__year">2026</span>
+            <div>
+              <h3><a href="https://doi.org/10.1126/sciadv.aea1431" rel="noopener">NRF2 coordinates cystine import and glutathione use to sustain ferroptosis resistance and formaldehyde tolerance in cancer.</a></h3>
+              <p class="pub__authors">Morellato AE, Alquezar-Artieda N, Guerrero-Maldonado A, Singh R, Beja L, Umansky C, Perich-Pallaruelo L, Pellicer M, Fernandez-Deu P, <strong>Aira N</strong>, Bourached-Silva N, Chorostecki U, Jones DJL, Roué G, Hopkinson RJ, Pontel LB.</p>
+              <p class="pub__venue"><em>Science Advances</em> 12(43), eaea1431 · <a href="https://doi.org/10.1126/sciadv.aea1431" rel="noopener">doi:10.1126/sciadv.aea1431</a></p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__year">2023</span>
+            <div>
+              <h3><a href="https://doi.org/10.1002/slct.202303776" rel="noopener">Synthesis of levoglucosenone-derived thiosemicarbazones as promising antituberculosis agents.</a></h3>
+              <p class="pub__authors">Tsai Y, <strong>Aira N</strong>, Ensinck D, Banchio C, Gramajo H, Suárez AG, Spanevello RA, Sarotti AM.</p>
+              <p class="pub__venue"><em>ChemistrySelect</em> 8(43), e202303776 · <a href="https://doi.org/10.1002/slct.202303776" rel="noopener">doi:10.1002/slct.202303776</a></p>
+            </div>
+          </li>
+        </ol>
+
+        <h3 class="sub">Talks, pitches &amp; meetings</h3>
+        <ul class="events">
+          <li class="event">
+            <span class="badge badge--talk">Pitch</span>
+            <div>
+              <h4>Meet in Italy for Life Sciences 2026 — Genesis4LifeSciences BRIDGE Track</h4>
+              <p>Rome · 13–14 October 2026 · Pitched GINfinity, “Finding the Needle in the Haystack”.</p>
+            </div>
+            <a class="event__doc" href="assets/certificates/Genesis4LifeSciences_BRIDGE_Track_GINfinity.pdf">Certificate</a>
+          </li>
+          <li class="event">
+            <span class="badge badge--talk">Pitch</span>
+            <div>
+              <h4>Venture Builder — Xartec Salut</h4>
+              <p>Barcelona · 2026 · Program participant and final pitch.</p>
+            </div>
+          </li>
+          <li class="event">
+            <span class="badge badge--talk">Presentation</span>
+            <div>
+              <h4>RiboRed 2026</h4>
+              <p>Sant Feliu de Guíxols · 13–15 May 2026 · Participated with a presentation of my research.</p>
+            </div>
+            <a class="event__doc" href="assets/certificates/RiboRed_2026_Aira_Nicolas.pdf">Certificate</a>
+          </li>
+          <li class="event">
+            <span class="badge">Training</span>
+            <div>
+              <h4>Advanced Nextflow Training — Nextflow Summit</h4>
+              <p>Barcelona · 15–16 October 2026.</p>
+            </div>
+            <a class="event__doc" href="assets/certificates/Nextflow_Training_Barcelona_2026_Aira_Nicolas.pdf">Certificate</a>
+          </li>
+          <li class="event">
+            <span class="badge">Course</span>
+            <div>
+              <h4>Integrative Analysis of Multi-Omics Data — EMBO Practical Course</h4>
+              <p>EMBL Heidelberg.</p>
+            </div>
+            <a class="event__doc" href="https://conference-service.com/pc24-07/download/939y5jbo/certificate_0012.pdf" rel="noopener">Certificate</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TEACHING -->
+    <section class="section" id="teaching">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="eyebrow">05 · Teaching</p>
+          <h2>Making machine learning tangible for life scientists</h2>
+          <p class="section__intro">
+            At UIC I teach in <strong>Introduction to Bioinformatics</strong>, <strong>Clinical Genetics</strong> and
+            <strong>Microbiology</strong>, and in the Lifelong Learning Master's Degree in
+            <strong>Bioinformatics &amp; AI for Healthcare</strong>. I like building small interactive tools so students can
+            play with the ideas instead of just reading about them.
+          </p>
+        </header>
+
+        <div class="cards cards--4">
+          <a class="card card--link" href="https://nicoaira.github.io/neural-network-playground/" rel="noopener">
+            <p class="card__tag">Interactive</p>
+            <h3>Neural network playground</h3>
+            <p>Weights, dot products, the sigmoid and the matrix form of a layer — through one simple decision.</p>
+            <span class="card__arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="card card--link" href="https://nicoaira.github.io/logistic-regression-playground/" rel="noopener">
+            <p class="card__tag">Interactive</p>
+            <h3>Logistic regression playground</h3>
+            <p>Thresholds and decision boundaries with one and two features, in 3D.</p>
+            <span class="card__arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="card card--link" href="https://nicoaira.github.io/gradient-descent-playground/" rel="noopener">
+            <p class="card__tag">Interactive</p>
+            <h3>Gradient descent playground</h3>
+            <p>Watch an optimiser walk down a loss surface, step by step.</p>
+            <span class="card__arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="card card--link" href="https://nicoaira.github.io/hfe-analysis-tools/" rel="noopener">
+            <p class="card__tag">Clinical Genetics</p>
+            <h3>HFE analysis tools</h3>
+            <p>Browser tools to check an HFE amplicon for the C282Y variant.</p>
+            <span class="card__arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section class="section section--tint" id="certificates">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="eyebrow">06 · Courses &amp; certificates</p>
+          <h2>Continuous learning</h2>
+        </header>
+
+        <div class="certs">
+          <div class="certs__group">
+            <h3>Deep learning &amp; ML</h3>
+            <ul>
+              <li><a href="https://www.coursera.org/account/accomplishments/certificate/YC4JT62ZWUSQ" rel="noopener">Neural Networks and Deep Learning</a><span>DeepLearning.AI · Coursera</span></li>
+              <li><a href="https://www.coursera.org/account/accomplishments/certificate/4KY9RQY2UBGS" rel="noopener">Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization</a><span>DeepLearning.AI · Coursera</span></li>
+              <li><a href="https://www.coursera.org/account/accomplishments/certificate/7APZC2PA8T8Z" rel="noopener">Structuring Machine Learning Projects</a><span>DeepLearning.AI · Coursera</span></li>
+              <li><a href="https://www.coursera.org/account/accomplishments/certificate/FSYYS4SAU9XE" rel="noopener">Convolutional Neural Networks</a><span>DeepLearning.AI · Coursera</span></li>
+              <li><a href="https://www.coursera.org/account/accomplishments/certificate/5Q8J4CTGX8BU" rel="noopener">Sequence Models</a><span>DeepLearning.AI · Coursera</span></li>
+              <li><a href="https://www.coursera.org/account/accomplishments/certificate/7AYEMDPDPCBB" rel="noopener">Machine Learning</a><span>Stanford Online · Coursera</span></li>
+              <li><a href="https://www.coursera.org/account/accomplishments/certificate/VF3GDB2T5XL3" rel="noopener">Getting Started with TensorFlow 2</a><span>Imperial College London · Coursera</span></li>
+              <li><a href="https://www.coursera.org/account/accomplishments/certificate/QFKXT6VK3QBR" rel="noopener">Customizing your Models with TensorFlow 2</a><span>Imperial College London · Coursera</span></li>
+            </ul>
+          </div>
+          <div class="certs__group">
+            <h3>Bioinformatics &amp; workflows</h3>
+            <ul>
+              <li><a href="assets/certificates/Nextflow_Training_Barcelona_2026_Aira_Nicolas.pdf">Advanced Nextflow Training</a><span>Nextflow Summit · Barcelona 2026</span></li>
+              <li><a href="https://conference-service.com/pc24-07/download/939y5jbo/certificate_0012.pdf" rel="noopener">Integrative Analysis of Multi-Omics Data</a><span>EMBO Practical Course · Heidelberg</span></li>
+              <li><a href="https://www.coursera.org/account/accomplishments/certificate/8XUHQYUYN4M4" rel="noopener">Introduction to Genomic Technologies</a><span>Johns Hopkins University · Coursera</span></li>
+              <li><a href="https://www.coursera.org/account/accomplishments/certificate/NVDFR7JNYFUL" rel="noopener">Command Line Tools for Genomic Data Science</a><span>Johns Hopkins University · Coursera</span></li>
+            </ul>
+            <h3>Programming</h3>
+            <ul>
+              <li><a href="http://ude.my/UC-e2c14a2f-59ab-4780-8126-d83f45be2c39" rel="noopener">Python Course</a><span>Udemy</span></li>
+              <li><a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-821e70a1-a5e0-4a2b-a73b-bb8aca5e9307.pdf" rel="noopener">R Programming</a><span>Udemy</span></li>
+            </ul>
+            <h3>Languages</h3>
+            <ul>
+              <li><a href="assets/certificates/TOEFL_iBT_Score_Report_Aira_Nicolas.pdf">TOEFL iBT — 106/120</a><span>ETS · June 2021</span></li>
+            </ul>
+            <h3>Conferences &amp; programs</h3>
+            <ul>
+              <li><a href="assets/certificates/RiboRed_2026_Aira_Nicolas.pdf">RiboRed 2026 — presentation</a><span>Sant Feliu de Guíxols · May 2026</span></li>
+              <li><a href="assets/certificates/Genesis4LifeSciences_BRIDGE_Track_GINfinity.pdf">Genesis4LifeSciences — BRIDGE Track (GINfinity)</a><span>Meet in Italy for Life Sciences · Rome 2026</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="wrap contact__inner">
+        <p class="eyebrow">07 · Contact</p>
+        <h2>Let's talk RNA, machine learning or startups.</h2>
+        <p class="section__intro">Open to research collaborations, conversations with people building in RNA and biotech, and anyone curious about structure-based RNA search.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="mailto:aira.nicolas94@gmail.com">aira.nicolas94@gmail.com</a>
+          <a class="btn" href="https://github.com/nicoaira" rel="noopener">github.com/nicoaira</a>
+          <a class="btn" href="assets/Nicolas_Aira_CV.pdf" download>Download CV ↓</a>
+        </div>
+        <p class="contact__loc">Based in Barcelona, Spain.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span>© <span id="year">2026</span> Nicolás Aira</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
