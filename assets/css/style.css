@@ -395,3 +395,12 @@ p { margin: 0 0 .9em; }
 .feature__text p:last-child { margin-bottom: 0; }
 @media (max-width: 680px) { .feature { grid-template-columns: 1fr; gap: 16px; padding: 14px; } }
 .lab .card__links a, .feature .card__links a { text-decoration: none; }
+
+/* Venture cards sit on a dark background in both themes: beat the generic .timeline rules */
+.section--ink .timeline--venture .tl { padding: 36px; }
+.section--ink .timeline--venture .tl__when { color: #6fd3bc; }
+.section--ink .timeline--venture .tl__org { color: var(--on-dark-muted); }
+.section--ink .timeline--venture .tl__body p { color: #dbe5e1; font-size: 16px; }
+.section--ink .timeline--venture .tl__body p.tl__org { color: var(--on-dark-muted); font-size: 14px; }
+.section--ink .timeline--venture .tl__body p.tl__links { font-size: 14px; }
+@media (max-width: 860px) { .section--ink .timeline--venture .tl { padding: 22px; } }
